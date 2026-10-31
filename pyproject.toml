@@ -1,0 +1,25 @@
+[project]
+name = "english-speech-practice"
+version = "0.1.0"
+description = "Offline English speech generation and Chinese translation"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "streamlit>=1.52,<2",
+    "piper-tts>=1.8,<2",
+    "huggingface-hub>=0.20,<1",
+    "argostranslate>=1.11,<2",
+]
+
+[dependency-groups]
+dev = ["pytest>=7,<10", "ruff>=0.11,<1"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "C4", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
